@@ -3,7 +3,7 @@ from pytest import raises
 # import numbers
 # from fractions import Fraction
 import numpy as np
-
+from numpy import NAN
 # def test_mymath_mean():
 #     assert myaverage([9,3]) == 6
 
@@ -15,8 +15,7 @@ import numpy as np
 input = list(range(10))
 
 def test_contains_NAN():
-    with raises(NameError):
-        binary_search([NAN,0], 0) 
+    assert binary_search([NAN,1], 0) == 0
         
 def test_contains_char():
     with raises(TypeError):
